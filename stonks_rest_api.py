@@ -1,4 +1,4 @@
-from flask.json import jsonify
+from flask import jsonify
 from functions import *
 from flask import Flask, request
 import sys
