@@ -1,4 +1,8 @@
-# stonks
+# Stonks REST API
+This application packages the functionality of [stonks-CLI](https://github.com/mtsfernando/stonks) in a REST API. The main reason for
+creating this API is to later build a functioning front-end that would utilize this.
+
+The following is the information from Stonks-CLI.
 Stonks is an application that will automate an existing stock valuation method that is widely used in value investing.
 ###### The method used by this program is outlined in this video by 'New Money': https://www.youtube.com/watch?v=ICiwzpQDGCI&ab_channel=NewMoney
 
@@ -11,6 +15,7 @@ pip install requests
 pip install alpha_vantage
 pip install rich
 pip install pandas
+pip install flask
 ```
 
 ### Setup
