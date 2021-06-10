@@ -1,17 +1,25 @@
+from flask.json import jsonify
 from functions import *
-from flask import Flask
+from flask import Flask, request
+import sys
+
+sys.stdout = sys.stderr
 
 app = Flask(__name__)
 
-@app.route("/<ticker>")
-def evaluate(ticker):
+@app.route("/evaluate")
+def evaluate():
 
-    ticker = ticker.upper()
+    ticker = request.args.get("ticker").upper()
+    ror = int(request.args.get("ror"))
+    print(ticker, ror)
     try:
-        company_data =  get_data(Console(), ticker, 10)
+        company_data =  get_data(Console(), ticker, ror)
     
-    except:
-        company_data = null
+    except Exception as ex:
+        print("Error!")
+        print(ex)
+        return jsonify("response", "null")
 
     return company_data
     
